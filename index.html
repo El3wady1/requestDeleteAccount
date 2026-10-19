@@ -1,224 +1,343 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>طلب حذف الحساب | من بيتنا - Mn Bytna</title>
+<meta name="description" content="طلب حذف الحساب والبيانات الشخصية من تطبيق لُقمة بيتي Loqma Beity.">
+<title>طلب حذف الحساب | لُقمة بيتي - Loqma Beity</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"Segoe UI",Tahoma,sans-serif;
+:root {
+    --primary: #E87922;
+    --secondary: #286B35;
+    --background: #FFF9F0;
+    --text: #30342F;
+    --muted: #777;
 }
 
-body{
-    background:#f5f7fa;
-    color:#333;
-    line-height:1.9;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
 }
 
-.container{
-    max-width:900px;
-    margin:40px auto;
-    background:#fff;
-    padding:40px;
-    border-radius:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+body {
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.9;
 }
 
-h1{
-    color:#e67e22;
-    margin-bottom:10px;
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.06);
 }
 
-h2{
-    color:#2c3e50;
-    margin-top:30px;
-    margin-bottom:10px;
+.brand {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-p{
-    margin:10px 0;
+.brand h1 {
+    color: var(--primary);
+    font-size: 32px;
 }
 
-ul{
-    padding-right:20px;
-    margin-top:10px;
+.brand h3 {
+    color: var(--secondary);
+    font-size: 22px;
 }
 
-li{
-    margin-bottom:8px;
+.brand span {
+    color: var(--muted);
+    font-size: 13px;
 }
 
-.date{
-    color:#777;
-    margin-bottom:25px;
+.page-title {
+    color: var(--secondary);
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-.notice{
-    background:#fff8e8;
-    border-right:5px solid #e67e22;
-    padding:15px;
-    border-radius:8px;
-    margin:20px 0;
+h2 {
+    color: var(--secondary);
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 21px;
 }
 
-.form-group{
-    margin-bottom:20px;
+p {
+    margin: 10px 0;
 }
 
-label{
-    display:block;
-    margin-bottom:8px;
-    font-weight:bold;
+ul {
+    padding-right: 22px;
+    margin-top: 10px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+li::marker {
+    color: var(--primary);
+}
+
+.date {
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.notice {
+    background: #FFF7E9;
+    border-right: 4px solid var(--primary);
+    padding: 18px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
 }
 
 input,
-textarea{
-    width:100%;
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:8px;
-    font-size:16px;
+textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #DDE5DF;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    background: #fff;
+    color: var(--text);
 }
 
-textarea{
-    resize:vertical;
-    min-height:120px;
+input:focus,
+textarea:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(40,107,53,.08);
 }
 
-button{
-    background:#e67e22;
-    color:#fff;
-    border:none;
-    padding:14px 25px;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
+textarea {
+    resize: vertical;
+    min-height: 120px;
 }
 
-button:hover{
-    background:#cf711b;
+button {
+    background: var(--secondary);
+    color: #fff;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    transition: .2s;
 }
 
-.footer{
-    margin-top:40px;
-    border-top:1px solid #ddd;
-    padding-top:20px;
-    text-align:center;
-    color:#666;
+button:hover {
+    background: #1D5129;
 }
 
-a{
-    color:#e67e22;
-    text-decoration:none;
+.footer {
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
 }
 
-a:hover{
-    text-decoration:underline;
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 12px;
+        padding: 24px 20px;
+        border-radius: 14px;
+    }
+
+    .brand h1 {
+        font-size: 27px;
+    }
+
+    h2 {
+        font-size: 19px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<main class="container">
 
-<h1>طلب حذف الحساب</h1>
-<h3>من بيتنا | Mn Bytna</h3>
+<header class="brand">
+    <h1>لُقمة بيتي</h1>
+    <h3>Loqma Beity</h3>
+    <span>أكل بيتي بطعم المحبة</span>
+</header>
+
+<h1 class="page-title">طلب حذف الحساب</h1>
 
 <p class="date">
-آخر تحديث: 3 أغسطس 2026
+    آخر تحديث: 19 أكتوبر 2026
 </p>
 
 <p>
-يمكنك من خلال هذه الصفحة طلب حذف حسابك وجميع البيانات الشخصية المرتبطة به داخل تطبيق
-<strong>من بيتنا (Mn Bytna)</strong>.
+يمكنك من خلال هذه الصفحة طلب حذف حسابك
+والبيانات الشخصية المرتبطة به داخل تطبيق
+<strong>لُقمة بيتي | Loqma Beity</strong>.
 </p>
 
 <div class="notice">
-<strong>ملاحظة:</strong>
-بعد تنفيذ طلب الحذف لن تتمكن من استعادة الحساب أو البيانات المحذوفة.
+    <strong>ملاحظة مهمة:</strong>
+    بعد تنفيذ طلب الحذف لن تتمكن من استعادة
+    الحساب أو البيانات التي تم حذفها.
 </div>
 
-<h2>سيتم حذف البيانات التالية</h2>
+<h2>1. البيانات التي سيتم حذفها</h2>
 
 <ul>
-<li>الاسم الشخصي.</li>
-<li>رقم الهاتف.</li>
-<li>البريد الإلكتروني.</li>
-<li>العناوين المحفوظة.</li>
-<li>صورة الملف الشخصي.</li>
-<li>سجل الطلبات المرتبط بالحساب (باستثناء البيانات التي يتطلب القانون الاحتفاظ بها).</li>
-<li>أي بيانات شخصية أخرى مرتبطة بالحساب.</li>
+    <li>الاسم الشخصي.</li>
+    <li>رقم الهاتف.</li>
+    <li>البريد الإلكتروني.</li>
+    <li>العناوين المحفوظة.</li>
+    <li>صورة الملف الشخصي.</li>
+    <li>
+        سجل الطلبات المرتبط بالحساب،
+        باستثناء البيانات التي يتطلب القانون الاحتفاظ بها.
+    </li>
+    <li>أي بيانات شخصية أخرى مرتبطة بالحساب.</li>
 </ul>
 
-<h2>قد نحتفظ بالبيانات التالية</h2>
+<h2>2. البيانات التي قد نحتفظ بها</h2>
 
 <p>
-قد يتم الاحتفاظ ببعض البيانات لفترة محددة إذا كان ذلك مطلوبًا بموجب القوانين أو لأغراض مكافحة الاحتيال أو حل النزاعات أو الالتزامات القانونية.
+قد يتم الاحتفاظ ببعض البيانات لفترة محددة
+إذا كان ذلك مطلوبًا بموجب القوانين المعمول بها،
+أو لأغراض مكافحة الاحتيال أو حل النزاعات
+أو الوفاء بالالتزامات القانونية.
 </p>
 
-<h2>نموذج طلب حذف الحساب</h2>
+<h2>3. نموذج طلب حذف الحساب</h2>
 
-<form action="mailto:support@mnbytna.com" method="post" enctype="text/plain">
+<p>
+يرجى إدخال بيانات الحساب حتى نتمكن
+من مراجعة طلب الحذف والتحقق من ملكية الحساب.
+</p>
+
+<form
+    action="mailto:support@mnbytna.com"
+    method="post"
+    enctype="text/plain"
+>
 
 <div class="form-group">
-<label>الاسم</label>
-<input type="text" name="name" required>
+    <label for="name">الاسم الكامل</label>
+    <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="أدخل اسمك الكامل"
+        autocomplete="name"
+        required
+    >
 </div>
 
 <div class="form-group">
-<label>رقم الهاتف</label>
-<input type="tel" name="phone" required>
+    <label for="phone">رقم الهاتف المرتبط بالحساب</label>
+    <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="أدخل رقم الهاتف"
+        autocomplete="tel"
+        required
+    >
 </div>
 
 <div class="form-group">
-<label>البريد الإلكتروني</label>
-<input type="email" name="email">
+    <label for="email">البريد الإلكتروني (اختياري)</label>
+    <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="example@email.com"
+        autocomplete="email"
+    >
 </div>
 
 <div class="form-group">
-<label>سبب الحذف (اختياري)</label>
-<textarea name="reason"></textarea>
+    <label for="reason">سبب حذف الحساب (اختياري)</label>
+    <textarea
+        id="reason"
+        name="reason"
+        placeholder="يمكنك كتابة سبب طلب الحذف هنا..."
+    ></textarea>
 </div>
 
 <button type="submit">
-إرسال طلب حذف الحساب
+    إرسال طلب حذف الحساب
 </button>
 
 </form>
 
-<h2>مدة تنفيذ الطلب</h2>
+<h2>4. مدة تنفيذ الطلب</h2>
 
 <p>
-سيتم مراجعة الطلب وتنفيذه خلال مدة لا تتجاوز <strong>7 أيام عمل</strong> من تاريخ استلامه، وقد نتواصل معك للتحقق من هوية صاحب الحساب قبل تنفيذ عملية الحذف.
+سيتم مراجعة طلب حذف الحساب وتنفيذه خلال مدة
+لا تتجاوز <strong>7 أيام عمل</strong>
+من تاريخ استلام الطلب، وقد نتواصل معك
+للتحقق من ملكية الحساب قبل تنفيذ عملية الحذف.
 </p>
 
-<h2>التواصل معنا</h2>
+<h2>5. التواصل معنا</h2>
 
 <p>
-إذا واجهت أي مشكلة أو كان لديك استفسار، يمكنك التواصل معنا عبر:
+إذا واجهت أي مشكلة أثناء تقديم طلب الحذف
+أو كان لديك استفسار، يمكنك التواصل معنا عبر:
 </p>
 
 <ul>
-<li>
-البريد الإلكتروني:
-<a href="mailto:support@mnbytna.com">support@mnbytna.com</a>
-</li>
-<li>
-من خلال صفحة "اتصل بنا" داخل التطبيق.
-</li>
+    <li>
+        البريد الإلكتروني:
+        <a href="mailto:support@mnbytna.com">
+            support@mnbytna.com
+        </a>
+    </li>
+    <li>
+        من خلال صفحة "اتصل بنا" داخل التطبيق.
+    </li>
 </ul>
 
-<div class="footer">
-© 2026 من بيتنا | Mn Bytna<br>
-جميع الحقوق محفوظة.
-</div>
+<footer class="footer">
+    © 2026 لُقمة بيتي | Loqma Beity
+    <p>جميع الحقوق محفوظة.</p>
+</footer>
 
-</div>
+</main>
 
 </body>
 </html>
